@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <button id="click">Click Here</button>
+    <p id="count">0</p>
+  </body>
+
+  <script>
+    let clickBtn = document.getElementById("click");
+    let count = document.getElementById("count");
+
+    let counter = 0;
+    function incCount() {
+      counter++;
+      count.innerHTML = counter;
+    }
+    clickBtn.addEventListener("click", performThrottling(incCount, 5000));
+
+    //clickBtn.addEventListener("click", debouncing(incCount, 5000));
+
+    //function addEventListener(event,f1){
+    // f1()
+    //}
+
+    function performThrottling(fun, timeInterval) {
+      console.log("I am called");
+      let flag = true;
+      return () => {
+        if (flag == true) {
+          fun();
+          flag = false;
+
+          setTimeout(() => {
+            flag = true;
+          }, timeInterval);
+        }
+      };
+    }
+  </script>
+</html>

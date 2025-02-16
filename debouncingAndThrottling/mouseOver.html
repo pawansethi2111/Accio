@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <h1>Mouse Over</h1>
+    <p>x: -, y: -</p>
+
+    <script>
+      let para = document.querySelector("p");
+      function trackMouse(event) {
+        para.textContent = `x:${event.clientX},y:${event.clientY}`;
+      }
+      document.addEventListener("mousemove", throttle(trackMouse, 2000));
+
+      function throttle(fun, timeInterval) {
+        let canRun = true;
+
+        return (event) => {
+          if (canRun == true) {
+            fun(event);
+            canRun = false;
+
+            setTimeout(() => {
+              canRun = true;
+            }, timeInterval);
+          }
+        };
+      }
+    </script>
+  </body>
+</html>
