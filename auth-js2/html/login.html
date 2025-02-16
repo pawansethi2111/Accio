@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="../style.css" />
+    <title>Login</title>
+  </head>
+  <body>
+    <form class="login">
+      <input
+        type="email"
+        name="email"
+        id="email"
+        placeholder="Email"
+        value="abc@mail.com"
+      />
+
+      <input
+        type="password"
+        name="password"
+        id="password"
+        placeholder="Password"
+        value="123456"
+      />
+
+      <button type="submit">Login</button>
+    </form>
+
+    <div id="message"></div>
+
+    <script>
+      if (localStorage.getItem("token")) {
+        window.location.href = "dashboard.html";
+      }
+
+      let loginForm = document.querySelector(".login");
+      let email_box = document.querySelector("#email");
+      let password_box = document.querySelector("#password");
+
+      loginForm.addEventListener("submit", (e) => {
+        e.preventDefault();
+
+        let email = email_box.value;
+        let password = password_box.value;
+
+        if (!email || !password) {
+          alert("All fields are required");
+        } else {
+          fetch("https://instagram-express-app.vercel.app/api/auth/login", {
+            method: "POST",
+
+            headers: {
+              "Content-Type": "application/json",
+            },
+
+            body: JSON.stringify({
+              email: email,
+              password: password,
+            }),
+          })
+            .then((response) => response.json())
+            .then((user) => {
+              console.log(user);
+              let para = document.createElement("p");
+              para.innerHTML = user.data.name + "," + user.message;
+              document.getElementById("message").append(para);
+              // save token to local storage:
+
+              localStorage.setItem("token", JSON.stringify(user.data.token));
+
+              alert("User logged in successfully");
+
+              // redirect user:
+              window.location.href = "dashboard.html";
+            })
+
+            .catch((err) => {
+              console.log(err);
+            });
+        }
+      });
+    </script>
+  </body>
+</html>
