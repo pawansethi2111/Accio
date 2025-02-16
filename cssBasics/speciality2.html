@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      /* h1{
+        }
+
+        #x-inner{
+        }
+        .y-inner{
+        } */
+      div h1 {
+        color: red;
+      }
+      .y-outer #x-inner {
+        color: green;
+      }
+      #x-inner{
+        color:yellow;
+      }
+      .y-outer h1 {
+        color: blue;
+      }
+      h1{
+        color:magenta !important;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="y-outer" id="x-outer">
+      <h1 class="y-inner" id="x-inner">Hello</h1>
+    </div>
+  </body>
+</html>

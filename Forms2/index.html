@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+     <form>
+         <input type="text" name="name" id="name" placeholder="Enter your name">
+         <button type="submit"> Submit </button>
+     </form>
+
+     <!-- <div id="result">
+
+     </div> -->
+
+     <!-- <script src="./script.js"></script> -->
+
+     <script>
+
+        // let name = "Hello"
+
+        // let nameJson = JSON.stringify(name)
+
+        // localStorage.setItem("data1", nameJson)
+
+        // let obj = {a:1, b:2}
+
+        // let objJson = JSON.stringify(obj)
+
+        // localStorage.setItem("data2", objJson)
+
+        let form = document.querySelector('form');
+        let input = document.querySelector('input');
+
+        //localstorage is temporary data storage he
+        let data1Json = localStorage.getItem("data1")
+
+        let nameList = [] 
+        if(data1Json) {
+            let data1 = JSON.parse(data1Json)
+            console.log(data1)
+        }        
+         
+        // []
+
+        form.addEventListener('submit', (e)=> {
+            e.preventDefault();
+
+            let name = input.value;
+
+            nameList.push(name)  // ["bird"]
+
+            let nameListJson = JSON.stringify(nameList)
+
+            localStorage.setItem("data1", nameListJson)
+        
+        })
+
+
+     </script>
+</body>
+</html>
+
+
+
+
+<!-- // JSON: => JavaScript Object Notation -->

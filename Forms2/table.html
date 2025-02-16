@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+       <div id="myTable">
+
+       </div>
+
+
+       <script>
+       let myTable = document.querySelector('#myTable');
+
+
+       let table = document.createElement('table');
+
+    //    let thead = document.createElement('thead');
+    //    table.append(thead);
+    //   let thead = table.createElement('thead');
+      let thead = table.createTHead();
+
+       let tr = thead.insertRow();
+         let headingData = ['Name', "Age", "City"];
+
+         headingData.forEach(data =>{
+            let th = document.createElement('th');
+            th.innerText = data;
+            tr.append(th);
+         })
+
+       myTable.append(table);
+
+
+       function addDataToTable(name, age, city){
+          let tbody =   document.querySelector("tbody") ||  table.createTBody();
+
+          let newRow = tbody.insertRow();
+
+          let nameCell = newRow.insertCell(); // <td></td>
+            nameCell.innerText = name;
+          let ageCell = newRow.insertCell(); // <td></td>
+            ageCell.innerText = age;
+            let cityCell = newRow.insertCell(); // <td></td>
+            cityCell.innerText = city;
+       }
+
+       addDataToTable('John', 25, 'New York');
+
+       addDataToTable('Doe', 30, 'California');
+
+       //[{A},{K},{Y}]
+
+
+
+
+
+
+
+       </script>
+</body>
+</html>

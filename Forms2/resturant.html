@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        label, input, textarea, select, button {
+            display: block;
+            margin: 10px;
+            padding: 5px;
+        }
+    </style>
+</head>
+<body>
+    <h1> Our Resturant </h1>
+
+    <form>
+        <label for="restaurant-name">Restaurant Name:</label>
+        <input type="text" id="restaurant-name" name="restaurant-name" required>
+
+        <label for="restaurant-description">Restaurant Description:</label>
+        <textarea id="restaurant-description" name="restaurant-description" required></textarea>
+
+        <label for="restaurant-type">Type:</label>
+        <select id="restaurant-type" name="restaurant-type" required>
+            <option value="veg">Veg</option>
+            <option value="non-veg">Non-Veg</option>
+        </select>
+
+        <label for="liquor">Do You serve Liquor:</label>
+        <input type="radio" id="liquor" name="liquor" value="yes" >Yes
+        <input type="radio" id="liquor" name="liquor" value="no" >No
+
+        <label for="favorite-color">Favorite Chicken Color:</label>
+        <input type="color" id="favorite-color" name="favorite-color">
+
+        <input type="submit" value="Submit">
+    </form>
+
+    <script>
+        let form = document.querySelector('form');
+
+        let resturantNameBox = document.querySelector('#restaurant-name');
+        let resturantDescriptionBox = document.querySelector('#restaurant-description');
+        let resturantTypeBox = document.querySelector('#restaurant-type');
+        let liquorBox = document.querySelectorAll('input[name="liquor"]');
+        let favoriteColorBox = document.querySelector('#favorite-color');
+
+        form.addEventListener("submit", addResturant)
+         
+
+        let resturantList = [];
+
+        function addResturant(eventObj){
+            eventObj.preventDefault();
+            let resturantName = resturantNameBox.value;
+            let resturantDescription = resturantDescriptionBox.value;
+            let resturantType = resturantTypeBox.value;
+            let liquor = "";
+            for(let i=0; i<liquorBox.length; i++){
+                if(liquorBox[i].checked){
+                    liquor = liquorBox[i].value;
+                }
+            }
+            let favoriteColor = favoriteColorBox.value;
+
+            // console.log(resturantName, resturantDescription, resturantType, liquor, favoriteColor)
+            let newResturant = {
+                name: resturantName,
+                description: resturantDescription,
+                type: resturantType,
+                liquor: liquor,
+                color: favoriteColor
+            }
+            resturantList.push(newResturant);
+
+            let resturantListJson = JSON.stringify(resturantList);
+            localStorage.setItem("resturantList", resturantListJson);
+        }
+
+
+
+
+
+
+
+
+
+    </script>
+</body>
+</html>

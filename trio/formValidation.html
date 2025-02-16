@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+        label,input,button{
+            display: block;
+            margin: 5px;
+            padding: 5px;
+        }
+    </style>
+</head>
+<body>
+    <form>
+
+        <div id="name-div">
+            <label for="name">Name:</label>
+            <input type="text" id="name" name="name">
+            <p id="error"></p>
+       </div>
+        
+        <label for="email">Email:</label>
+        <input type="email" id="email" name="email" value="john@jhonny.cpm">
+        
+        <label for="password">Password:</label>
+        <input type="password" id="password" name="password"  value="123456">
+        
+        <label for="confirm-password">Confirm Password:</label>
+        <input type="password" id="confirm-password" name="confirm-password"  value="123456">
+        
+        <button type="submit">Submit</button>
+    </form>
+
+
+    <script>
+            let form = document.querySelector('form');
+            let name_box = document.querySelector('#name');
+            let email_box = document.querySelector('#email');
+            let password_box = document.querySelector('#password');
+            let confirm_password_box = document.querySelector('#confirm-password');
+            
+            
+            form.addEventListener("submit", validateForm);
+
+
+            function validateForm(eventObj){
+                eventObj.preventDefault();
+                let name = name_box.value;
+                let email = email_box.value;
+                let password = password_box.value;
+                let confirm_password = confirm_password_box.value;
+
+                if(!name || !email || !password || !confirm_password){
+                    alert("All fields are required");
+                    return;
+                }
+                if(password != confirm_password){
+                    alert("Password and Confirm Password should be same");
+                    return;
+                }
+                alert("Form Submitted Successfully");
+
+                // for reseting the form
+
+                // name_box.value = "";
+                // email_box.value = "";
+                // password_box.value = "";
+                // confirm_password_box.value = "";
+
+                form.reset();
+                
+
+            }
+
+
+
+
+            //input, Change
+            name_box.addEventListener("input", (e)=>{
+                // console.log("Name", e.target.value);
+                name_box.style.outline = "none";
+
+                let error = document.querySelector('#error');
+
+                if(name_box.value.length < 3){
+                    name_box.style.border = "1px solid red";
+                    error.innerText = "Name should be atleast 3 characters long";
+                }   
+                else{
+                    name_box.style.border = "1px solid green";
+                    error.innerText = "";
+                }
+
+
+            })
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    </script>
+</body>
+</html>

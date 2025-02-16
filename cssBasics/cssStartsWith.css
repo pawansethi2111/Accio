@@ -1,0 +1,18 @@
+//href that starts with "https"
+a[href^="https"]{
+    color:#FF6347;
+    border-bottom:1px dotted;
+}
+
+
+//href that ends with
+a[href$=".pdf"]{
+    background-color: url('images/pdf.png') no-repeat 0 2px;
+    padding-left:25px;
+}
+
+
+//href that contains
+img[src*="thumbnails"]{
+    border:5px solid #000;
+}

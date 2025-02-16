@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      body {
+        background-color: black;
+        color: white;
+      }
+    </style>
+  </head>
+  <body>
+    <input type="text" id="amt" class="amount" placeholder="Enter Bill" />
+    <button onClick="calculateTip()">Calculate Bill</button>
+    <div class="output"></div>
+
+    <script>
+      let input_box = document.querySelector(".amount");
+      let btn = document.querySelector("button");
+      let output = document.querySelector(".output");
+      btn.addEventListener("click", calculateTip);
+
+      function calculateTip() {
+        //console.log("value",input_box.value, typeof input_box.value);
+        let amount = +input_box.value;
+
+        let tip = (amount * 25) / 100;
+        //console.log("tip",tip);
+
+        output.innerText = `Tip is ${tip}`;
+      }
+      //console.log("value",input_box.value);
+      //click
+    </script>
+  </body>
+</html>

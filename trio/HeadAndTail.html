@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div class="output">
+         
+    </div>
+
+    <button> Head </button>
+    <button> Tail </button>
+
+    <script>
+        let btns = document.querySelectorAll('button'); // [button, button]
+        let output = document.querySelector('.output');
+        // btns[0].addEventListener() 
+        // btns[1].addEventListener()
+        for(let t of btns){
+            // t.addEventListener("click", ()=>toss(t))
+            t.addEventListener("click", toss)
+        }
+
+        // function addEventListener(p1, toss){
+
+        //     toss(eventObj)
+
+        // }
+       let userScore = 0 
+       let computerScore = 0
+        function toss(eventObj){
+            // console.log("Toss", btn.innerText)
+            let userClick = eventObj.target.innerText.toLowerCase();
+            // toss: 
+            let arr = ['head', 'tail'];
+            let randomIndex = parseInt(Math.random() * 2);
+            let randomTossValue = arr[randomIndex];
+            if(userClick == randomTossValue){
+                // console.log("User Win because toss value is ", randomTossValue)
+                userScore++;
+            }
+            else{
+                // console.log("Computer Win because toss value is ", randomTossValue)
+                computerScore++;
+            }
+            // output.innerText = `User Score: ${userScore} Computer Score: ${computerScore}`
+            output.innerHTML = `<h1> User Score: ${userScore} </h1> <h2> Computer Score: ${computerScore} </h2>`
+        }
+
+        
+    </script>
+</body>
+</html>

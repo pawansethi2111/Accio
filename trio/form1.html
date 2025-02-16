@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <form onsubmit="display(event)">
+      <input type="text" />
+      <button type="submit">Submit</button>
+    </form>
+    <p id="para"></p>
+
+    <script>
+      let inputBox = document.querySelector("input");
+      let btn = document.querySelector("button");
+      let para = document.querySelector("#para");
+      let form = document.querySelector("form");
+
+      //  btn.addEventListener("click", display)
+      // submit event:
+
+      // form.addEventListener("submit", display)
+
+      function display(e) {
+        // console.log("Event Object", eventObj);
+        e.preventDefault();
+        para.innerHTML = inputBox.value;
+      }
+    </script>
+  </body>
+</html>

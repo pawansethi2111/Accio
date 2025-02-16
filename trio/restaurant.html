@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+      <div class="resturant-area">
+
+      </div>
+      <button> Add Resustrant</button>
+
+
+      <script>
+         
+         let resturantArea = document.querySelector('.resturant-area');
+            let btn = document.querySelector('button');
+
+            btn.addEventListener("click", addResturant);
+            
+            // let ressturantNames = [
+            //     "Vamshi Chaat Corner",
+            //     "Sri Sai Ram Tiffins",
+            //     "Sri Sai Food",
+            //     "Sri Sai Biryani",
+            // ];
+
+            
+
+            let resturantNames = [
+                {
+                    id: 1,
+                    name: "Vamshi Chaat Corner",
+                    description: "Famous for its delicious chaats and street food.",
+                    veg: true
+                },
+                {
+                    id: 2,
+                    name: "Sri Sai Ram Tiffins",
+                    description: "Popular for its South Indian breakfast items.",
+                    veg: true
+                },
+                {
+                    id: 3,
+                    name: "Sri Sai Food",
+                    description: "Offers a variety of traditional Indian dishes.",
+                    veg: false
+                },
+                {
+                    id: 4,
+                    name: "Sri Sai Biryani",
+                    description: "Known for its mouth-watering biryanis.",
+                    veg: false
+                }
+            ];
+
+
+            let k = 0
+  
+            function addResturant(){
+                 let div = document.createElement('div');
+                 let heading2 = document.createElement('h2');
+                 heading2.innerText = resturantNames[k].name;
+                 let para = document.createElement('p');
+                 para.innerText = resturantNames[k].description;
+                  let mode = document.createElement('p');
+                    mode.innerText = resturantNames[k].veg ? "Veg" : "Non-Veg";
+
+                    div.append(heading2, para, mode);
+                 
+                 resturantArea.append(div)
+                    k++;
+            }
+
+
+      </script>
+</body>
+</html>

@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+
+    Person1: <input type="text" value= "Abdullah">
+    <button class="dice" id="user1">Roll the dice</button>
+    Value you Got: <span></span> <br> <br>
+
+    Person2: <input type="text" value= "Vamsi">
+    <button class="dice" id="user2">Roll the dice</button>
+    Value you Got: <span></span> <br> <br>
+
+    Person3: <input type="text" value= "Hardik">
+    <button class="dice" id="user3">Roll the dice</button>
+    Value you Got: <span></span> <br> <br>
+
+    Person4: <input type="text" value= "Mudasshir Alam">
+    <button class="dice" id="user4">Roll the dice</button>
+    Value you Got: <span></span> <br> <br>
+
+    Person5: <input type="text" value= "Pranjal">
+    <button class="dice" id="user5">Roll the dice</button>
+    Value you Got: <span></span> <br> <br>
+
+    <button id="endButton"> End Button </button>
+    <div id="winMessage"></div>
+
+
+    <script>
+
+
+      let playersNames = document.querySelectorAll('input'); //[in1, in2, in3, in4, in5]
+      let diceBtns = document.querySelectorAll('.dice');
+      let scoreSpans = document.querySelectorAll('span');
+      let endButton = document.querySelector('#endButton');
+      let output = document.querySelector('#winMessage');
+
+      endButton.disabled = true;
+
+
+      for(let t of diceBtns){
+        t.addEventListener("click", diceRoll)
+      }
+     let count = 0
+      function diceRoll(eventObj){
+         count++ 
+         if(count == 5){
+           endButton.disabled = false;
+         }
+        eventObj.target.disabled = true;
+         let clickedPersonId = eventObj.target.id // "user1"
+         let userid = clickedPersonId.slice(4) - 1; // 100
+        //  console.log("User Id", userid, playersNames[userid].value)
+        let randomNum = 1+ parseInt(Math.random()*6)
+        scoreSpans[userid].innerText = randomNum;
+        // console.log("Random Number", randomNum)
+      }
+
+
+      endButton.addEventListener("click", endGame)
+
+      function endGame(){
+        // span = [<span>5</span>, <span>3</span>, <span>5</span>, <span>2</span>, <span>5</span>]
+        let biggest = 0
+          for(let t of scoreSpans){
+            // t = <span>5</span>
+            let value = t.innerText
+            if(value > biggest){
+                biggest = value
+            }
+          }
+        /// who all has got biggest score
+          let maxIndex = [] // [0,2,4]
+          for(let i = 0; i<=scoreSpans.length-1; i++){
+              let value = scoreSpans[i].innerText
+              if(value == biggest){
+                maxIndex.push(i)
+              }
+          }
+          let winnerNames = []
+          for(let t of maxIndex){
+            winnerNames.push(playersNames[t].value)
+          }
+
+          output.innerText = "The Winner is " + winnerNames.join(", ")
+      }
+
+
+
+
+
+
+
+
+    
+    </script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ 
+</body>
+   
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</html>
