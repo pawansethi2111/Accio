@@ -1,0 +1,39 @@
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+#container{
+    display: grid;
+    grid-template-columns: 100px  repeat(26, 100px);
+    grid-template-rows: 100px repeat(20, 100px);
+}
+
+
+.cell{
+    /* background-color: wheat; */
+    border: 1px solid black;
+    color: black;
+    outline: none;
+
+}
+
+
+.selected{
+    background-color: lightblue;
+    border: 2px solid red;
+}
+
+
+
+.header-cell{
+   display: flex;
+    justify-content: center;
+    align-items: center;
+    color: tomato;
+    font-size: larger;
+    background-color: aliceblue;
+    font-weight: 700;
+}
