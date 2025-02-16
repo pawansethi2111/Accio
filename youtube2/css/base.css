@@ -1,0 +1,30 @@
+/* css variables */
+
+/* body */
+
+
+:root{
+    --primary-color: #007bff;
+    --secondary-color: #6c757d;
+}
+*{
+    margin:0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+body{
+    font-family: "Montserrat", serif;
+    font-size:62.5%;
+    /* 1 rem = 10px */
+
+}
+
+
+.navbar{
+    background-color: red;
+}
+
+.categories
+ /* 1 rem = 16px */

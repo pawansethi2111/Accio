@@ -1,0 +1,50 @@
+:root{
+    --font-size:10px;
+
+}
+
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+body{
+    font-family:"Montserrat",serif;
+    font-size: var(--font-size) /*10px*/
+}
+
+
+/* @media media-type (media-features) */
+
+/* @media screen and (min-width:700px){
+    body{
+        background-color:red;
+        color:green;
+    }
+    
+}
+
+@media screen and (orientation:landscape) and(480px<=width<=700px){
+    body{
+        background-color:blue;
+        color:yellow;
+    }
+} */
+
+
+@media (pointer:fine){
+
+}
+
+@media (pointer:coarse){
+
+}
+
+@media screen and (prefers-color-scheme:dark){
+    body{
+        background-color:black;
+        color:white;
+    }
+}
