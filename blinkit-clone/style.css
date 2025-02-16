@@ -1,0 +1,101 @@
+/* child ko absolute
+parent ko relative
+
+*/
+
+
+:root{
+    --primaryColor:#353535;
+    --primaryColorDark:#3c6e71;
+    --primaryColorLight:rgba(0,0,0,0.1);
+}
+
+*{
+    margin:0;
+    padding: 0;
+}
+
+
+body{
+    font-family:"Edu AU VIC WA NT Arrows","Open Sans",cursive;
+    font-weight:500;
+}    
+
+
+.navbar{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid var(--primaryColorLight);
+    padding: 20px 10px;
+}
+.navbar-left{
+    /* background-color: red; */
+    flex: 0.5;
+}
+.navbar-left img{
+    width: 100px;
+}
+
+.navbar-center{
+    /* background-color: bisque; */
+    display: flex;
+    flex: 5;
+    margin: 0 20px;
+    align-items: center;
+}
+
+.navbar-center .delivery{
+    flex:1;
+}
+.navbar-center .delivery #time{
+    font-size:large;
+    font-weight: bolder;
+}
+
+.navbar-center .search-bar{
+    flex: 5;
+    /* background-color: red; */
+    position: relative; 
+}
+
+
+.navbar-center .search-bar .search {
+     width: 95%;
+     padding: 5px;
+     border-radius: 10px;
+     background-color: rgba(0, 0, 0, 0.1);
+}
+
+.navbar-center .search-bar .search::placeholder{
+    padding-left: 3%;
+}
+
+
+.input-icon{
+    position: absolute;
+    left:10px;
+    top: 6px;
+}
+
+
+.navbar-right{
+    /* background-color: bisque; */
+    flex: 1;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.navbar-right  button{
+    padding: 10px;
+    border: none;
+    border-radius: 10px;
+    background-color: green;
+    color: white;
+}
+
+.navbar-right  a{
+    text-decoration: none;
+    color: black;
+}

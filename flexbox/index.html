@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      * {
+        padding: 0;
+        margin: 0;
+      }
+      /*.container div{
+            background-color: antiquewhite;
+        }*/
+
+      .container {
+        display: flex;
+        /*height: 700px;*/
+        /*flex-direction: row;*/
+        /*flex-direction: column;*/
+        /*flex-direction: row-reverse;*/
+        /*flex-direction: column-reverse;*/
+        /* align-items, by default: top to bottom => vertical*/
+        /*align-items: stretch;*/
+        /*align-items:center;*/
+        /*align-items: flex-start;*/
+        /*align-items: flex-end;*/
+        /*justify-content: flex-start;*/
+        /*justify-content: center;*/
+        /*justify-content: flex-end;*/
+        /*justify-content: space-around;*/
+        /*\justify-content: space-evenly;*/
+        /*justify-content: space-between;*/
+      }
+      .item {
+        background-color: antiquewhite;
+        border: 2px solid red;
+        width: 20%;
+      }
+      .item1 {
+        order: 10;
+      }
+      .item2 {
+        order: -1;
+      }
+      .item3 {
+        order: 0;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <div class="item item1">
+        <h2>Item 1</h2>
+        <p>
+          Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quisquam
+          necessitatibus laudantium maiores quo, qui eum culpa unde nobis, neque
+          officiis obcaecati explicabo facilis. Aperiam quae harum accusamus
+          animi illum sapiente.
+        </p>
+      </div>
+
+      <div class="item item2">
+        <h2>Item 2</h2>
+        <p>
+          Lorem ipsum dolor sit, amet consectetur adipisicing elit. Repudiandae
+          qui veritatis atque temporibus corrupti laboriosam vero cupiditate
+          harum. Nostrum ipsum aspernatur sunt iste repudiandae sed quasi
+          dolorem pariatur commodi beatae!
+        </p>
+      </div>
+      <div class="item item3">
+        <h2>Item 3</h2>
+        <p>
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Aut, numquam!
+          Facere labore laboriosam dolorum, eius ratione at expedita maiores
+          repellendus minima, asperiores, reprehenderit velit qui iure ullam
+          perferendis fugiat aliquam?
+        </p>
+      </div>
+    </div>
+  </body>
+</html>

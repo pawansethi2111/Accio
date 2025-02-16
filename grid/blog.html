@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+      .container {
+        display: grid;
+        height: 100vh;
+
+        grid-template-columns: 4fr 1fr;
+        grid-template-rows: 50px 25px 1fr 50px;
+
+        grid-template-areas:
+          "header header"
+          "menu sidebar"
+          "content sidebar"
+          "footer footer";
+      }
+
+      .item1 {
+        grid-area: header;
+        background-color: skyblue;
+        padding: 5px;
+        text-align: center;
+      }
+      .item2 {
+        grid-area: menu;
+        background-color: green;
+
+        display: flex;
+        align-items: center;
+        justify-content: space-evenly;
+      }
+
+      .item2 a {
+        text-decoration: none;
+        color: white;
+      }
+
+      .item3 {
+        grid-area: sidebar;
+        background-color: blue;
+      }
+      .item4 {
+        grid-area: content;
+        background-color: yellow;
+      }
+      .item5 {
+        grid-area: footer;
+        background-color: pink;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <div class="item1">Title</div>
+      <div class="item2">
+        <a href="#">Home</a>
+        <a href="#">About</a>
+        <a href="#">Contact</a>
+      </div>
+      <div class="item3">
+        Lorem ipsum, dolor sit amet consectetur adipisicing elit. Quae similique
+        unde sequi sapiente saepe pariatur, velit id mollitia! Similique eveniet
+        iusto unde tempore nostrum. Alias maiores, consequuntur, quisquam
+        temporibus assumenda earum, quis rem fugit autem debitis deserunt sint
+        dolor tempora ipsum veritatis fuga aliquam sunt quia error eaque!
+        Voluptates, voluptatibus?
+      </div>
+      <div class="item4">
+        <h1>Content</h1>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit</p>
+      </div>
+      <div class="item5">Closing Notes</div>
+    </div>
+  </body>
+</html>

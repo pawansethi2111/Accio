@@ -1,0 +1,271 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      * {
+        padding: 0px;
+        margin: 0px;
+      }
+      body {
+        background-color: black;
+        font-family: "Montserrat";
+      }
+      ul {
+        display: flex;
+      }
+      li {
+        padding: 10px;
+        text-decoration: none;
+        list-style-type: none;
+      }
+      .nav {
+        display: flex;
+        align-items: center;
+        background-color: #fcaf02;
+        text-align: center;
+      }
+      .container2 {
+        display: flex;
+        padding: 10px;
+        margin-right: -50px;
+        margin-left: 900px;
+      }
+      .startup {
+        margin-left: 10px;
+      }
+      .home {
+        padding: 10px;
+      }
+      .Aboutus {
+        padding: 10px;
+      }
+      .Contactus {
+        padding: 10px;
+      }
+      .Login {
+        padding: 10px;
+      }
+      img {
+        -webkit-transform: scaleX(-1);
+      }
+      .landingpage {
+        display: flex;
+      }
+      .landingpage1 {
+        color: white;
+        padding: 30px;
+      }
+      .landingpage2 {
+        margin-right: 100px;
+      }
+      button {
+        background-color: #fcaf02;
+        border-radius: 50px;
+        width: 150px;
+        padding: 10px;
+        border: 1px solid #fcaf02;
+      }
+      .boldertext {
+        font-size: 17px;
+      }
+
+      h1 {
+        color: white;
+      }
+      .contactus {
+        padding: 30px;
+        color: #fcaf02;
+      }
+
+      .name {
+        border: 1px solid #fcaf02;
+        background-color: black;
+        color: #fcaf02;
+        width: 1200px;
+        border-radius: 50px;
+        padding: 20px;
+      }
+      .email {
+        border: 1px solid #fcaf02;
+        background-color: black;
+        width: 1200px;
+        border-radius: 50px;
+        color: #fcaf02;
+        padding: 20px;
+      }
+      .mobile {
+        border: 1px solid #fcaf02;
+        background-color: black;
+        width: 530px;
+        border-radius: 50px;
+        color: #fcaf02;
+        padding: 20px;
+        margin-right: 50px;
+      }
+      .city {
+        border: 1px solid #fcaf02;
+        background-color: black;
+        width: 550px;
+        border-radius: 50px;
+        color: #fcaf02;
+        padding: 20px;
+        margin-left: 30px;
+      }
+      ::placeholder {
+        color: #fcaf02;
+      }
+      .contactus2 {
+        display: flex;
+      }
+      .submitform {
+        display: flex;
+        align-items: center;
+        text-align: center;
+        justify-content: center;
+        margin-left: 500px;
+        padding: 15px;
+        font-size: 16px;
+        width: 230px;
+      }
+      table,
+      th {
+        border: 1px solid #fcaf02;
+        color: #fcaf02;
+      }
+      td {
+        border-left: 1px solid #fcaf02;
+        text-align: center;
+      }
+      tr:nth-child(5) {
+        background-color: #fcaf02;
+        color: black;
+      }
+
+      table {
+        width: 90%;
+        border-collapse: collapse;
+      }
+
+      .tablebody {
+        display: flex;
+        justify-content: center;
+      }
+    </style>
+    <title>Document</title>
+  </head>
+  <body>
+    <div class="nav">
+      <div class="startup">
+        <h2>Start<u>up</u></h2>
+      </div>
+
+      <div class="container2">
+        <div class="home">Home</div>
+        <div class="Aboutus">About Us</div>
+        <div class="Contactus">Contact Us</div>
+        <div class="Login">Login</div>
+      </div>
+    </div>
+    <!--First section-->
+
+    <div class="landingpage">
+      <div class="landingpage1">
+        <h1>Startup Landing Page</h1>
+        <br />
+        <div>
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Quo
+          reprehenderit autem consequatur dicta blanditiis pariatur alias,
+          assumenda dolor quos tenetur reiciendis id error dolore magnam
+          consectetur, quae voluptatem a sunt. Lorem ipsum dolor sit amet
+          consectetur adipisicing elit. Quo reprehenderit autem consequatur
+          dicta blanditiis pariatur alias, assumenda dolor quos tenetur
+          reiciendis id error dolore magnam consectetur, quae voluptatem a sunt.
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Quo
+          reprehenderit autem consequatur dicta blanditiis pariatur alias,
+          assumenda dolor quos tenetur reiciendis id error dolore magnam
+          consectetur, quae voluptatem a sunt.
+        </div>
+        <br />
+        <button type="submit">
+          <p class="boldertext"><b>Login</b></p>
+        </button>
+      </div>
+      <div class="landingpage2">
+        <br />
+        <img src="./jeff1.jpg" alt="JeffBezos" width="500px" height="300px" />
+      </div>
+    </div>
+
+    <!--section 2 finished-->
+    <div class="contactus">
+      <h1>Contact Us</h1>
+      <br />
+      <div><input type="text" placeholder="Name" class="name" /></div>
+      <br />
+      <div><input type="email" placeholder="Email" class="email" /></div>
+      <br />
+      <div class="contactus2">
+        <div>
+          <input type="text" placeholder="Mobile Number" class="mobile" />
+        </div>
+        <div>
+          <input type="text" placeholder="City" class="city" />
+        </div>
+      </div>
+      <br />
+      <button type="submit" class="submitform"><b>Submit Form</b></button>
+    </div>
+
+    <div class="tablebody">
+      <table>
+        <thead>
+          <tr>
+            <th>SNO.</th>
+            <th>Startup Name</th>
+            <th>Startup Description</th>
+          </tr>
+        </thead>
+
+        <tbody>
+          <tr>
+            <td>1.</td>
+            <td>Wowindia</td>
+            <td>A startup with WOW ideas</td>
+          </tr>
+
+          <tr>
+            <td>2.</td>
+            <td>Lorem ipsum</td>
+            <td>A startup with WOW ideas</td>
+          </tr>
+
+          <tr>
+            <td>3.</td>
+            <td>Lorem ipsum</td>
+            <td>Lorem ipsum Text</td>
+          </tr>
+
+          <tr>
+            <td>4.</td>
+            <td>Lorem ipsum</td>
+            <td>Lorem ipsum Text</td>
+          </tr>
+
+          <tr>
+            <td>5.</td>
+            <td>Lorem ipsum</td>
+            <td>Lorem ipsum Text</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </body>
+</html>
